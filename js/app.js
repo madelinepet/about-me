@@ -10,16 +10,19 @@
 
 var petQuestion = parseInt(prompt('How many pets do you think I have? Please enter a number.'));
 if(petQuestion === 2){
-  alert('Correct!');
+  alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
 } else {
   alert ('Nope!');
+  console.log('Keep trying!');
 }
+
 
 var myAge = prompt('Do you think I am older than 25?').toLowerCase();
 //many ways to say yes, check for lots. || matches one or other, && matches both
 if(myAge === 'yes') {
+  alert ('No, I am younger than 25!')
 } else {
-alert ('No, I am younger than 25!');
+alert ('You are correct! I am 24.');
 }
 
 // if( first condition) {
