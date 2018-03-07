@@ -8,10 +8,13 @@ var petQuestion = parseInt(prompt('How many pets do you think I have? Please ent
 if(petQuestion === 2){
   console.log('Correct');
   alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
-  numIncorrect.push('correct');
-}else {
+  numIncorrect.push('Correct');
+}else if (petQuestion < 2) {
   console.log('Keep trying! The user probably cannot see this, but the answer is 2.');
-  alert('Keep trying!');
+  alert('No, I am an amimal lover!');
+  numIncorrect.push('Incorrect');
+} else {
+  alert('I wish!');
   numIncorrect.push('Incorrect');
 }
 
@@ -52,30 +55,37 @@ var doILikeHorses = prompt('Do I like horses?').toLowerCase();
 if(doILikeHorses === 'yes') {
   console.log('Taking care of horses is a lot of work!');
   alert ('Yes. Growing up, I rode horses and enjoyed jumping.');
+  numCorrect.push('Correct');
 } else {
   console.log('Incorrect.');
   alert ('I actually do like them. I particularly enjoyed jumping while I was growing up.');
+  numIncorrect.push('Incorrect');
 }
 
 var iCantSwim = prompt ('Do you believe me when I say I cannot swim?').toLowerCase();
 if(iCantSwim === 'yes') {
   console.log('I actually can.');
   alert('Actually, I\'m just pulling your leg. I can swim!');
+  numIncorrect.push('Incorrect');
 } else {
   console.log ('You are right not to believe me. On this one, at least!');
   alert('You are right not to believe me. On this one, at least!');
+  numCorrect.push('Correct');
 }
 
 var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
 if(lasagnaServings === 8) {
   console.log('Wow, good job guessing! I\'m still eating it four days later!');
   alert('You\'re good at guessing!');
+  numCorrect.push('Correct');
 } else if (lasagnaServings < 8) {
   console.log('Actually, more!');
-  alert('Not quite. Try a higher number!');
+  alert('Actually, more!');
+  numIncorrect.push('Incorrect');
 } else {
   console.log('Okay, not quite that much!');
-  alert('Thankfully, not that much! Try a lower number!');
+  alert('Thankfully, not that much!');
+  numIncorrect.push('Incorrect');
 }
 
-alert ('Good job ' + userName + ' you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.lenth + ' answer(s) wrong ');
+alert ('Good job ' + userName + ' you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.length + ' answer(s) wrong. ');
