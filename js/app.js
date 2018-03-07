@@ -52,4 +52,17 @@ if(iCantSwim === 'yes') {
   alert('Actually, I\'m just pulling your leg. I can swim!');
 } else {
   console.log ('You are right not to believe me. On this one, at least!');
+  alert('You are right not to believe me. On this one, at least!');
+}
+
+var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
+if(lasagnaServings === 8) {
+  console.log('Wow, good job guessing! I\'m still eating it four days later!');
+  alert('You\'re good at guessing!');
+} else if (lasagnaServings < 8) {
+  console.log('Actually, more!');
+  alert('Not quite. Try a higher number!');
+} else {
+  console.log('Okay, not quite that much!');
+  alert('Thankfully, not that much! Try a lower number!');
 }
