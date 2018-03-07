@@ -1,9 +1,15 @@
 h1{
-  background-color: red;
+  background-color: blue;
+  color: white;
   font-size: 1.9em;
   font-style: serif;
+  margin-bottom: 50px;
 }
 p{
   font-size: 1.7em;
   font-style: sans-serif;
+  margin-bottom: 50px;
+}
+img {
+  height: 400px;
 }
