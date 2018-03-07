@@ -4,9 +4,6 @@
 var numCorrect =[];
 var numIncorrect =[];
 
-//define a variable to keep code shorter for each console log to give reports on score after each question
-var addedMessage = ('you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
-
 //get userName so I can use it in the score message
 var userName = prompt('What is your name?');
 
@@ -23,7 +20,8 @@ if(petQuestion === 2){
   alert('I wish!');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 1: ' + addedMessage);
+//When we're allowed to use fns in our labs, I will make most of this long message into one I can call instead of repeating long iterances
+console.log('Question 1: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 var myAge = prompt('Do you think I am older than 25?').toLowerCase();
 if(myAge === 'no') {
@@ -33,7 +31,7 @@ if(myAge === 'no') {
   alert('No, I am younger than 25!');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 2: ' + addedMessage);
+console.log('Question 2: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 var myTravels = prompt('Have I been to Australia?').toLowerCase();
 if(myTravels === 'no') {
@@ -43,7 +41,7 @@ if(myTravels === 'no') {
   alert ('Unfortunately, I have not! Ever since the Lord of the Rings movies, I have wanted to go to Oceania! My favorite trip was probably to Copenhagen, but Australia and New Zealand are high on the list!');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 3: ' + addedMessage);
+console.log('Question 3: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 
 var MyEducation = prompt('Do I have a bachelor\'s degree?').toLowerCase();
@@ -54,7 +52,7 @@ if(MyEducation === 'yes') {
   alert('I actually do. I went to Whitman College where I studied Geology and minored in Anthropology. Can you tell from my cats\' names?');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 4: ' + addedMessage);
+console.log('Question 4: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 
 var doILikeHorses = prompt('Do I like horses?').toLowerCase();
@@ -65,7 +63,7 @@ if(doILikeHorses === 'yes') {
   alert ('I actually do like them. I particularly enjoyed jumping while I was growing up.');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 5: ' + addedMessage);
+console.log('Question 5: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 
 var iCantSwim = prompt ('Do you believe me when I say I cannot swim?').toLowerCase();
@@ -76,7 +74,7 @@ if(iCantSwim === 'no') {
   alert('Actually, I\'m just pulling your leg. I can swim!');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 6: ' + addedMessage);
+console.log('Question 6: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 
 var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
@@ -90,7 +88,7 @@ if(lasagnaServings === 8) {
   alert('Okay, not that much!');
   numIncorrect.push('Incorrect');
 }
-console.log('Question 7: ' + addedMessage);
+console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 //concatenation used here based on variables defined at top to report score to user
 alert ('Good job ' + userName + ', you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.length + ' answer(s) wrong. ');
