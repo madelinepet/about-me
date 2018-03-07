@@ -19,25 +19,25 @@ if(petQuestion === 2){
 }
 
 var myAge = prompt('Do you think I am older than 25?').toLowerCase();
-if(myAge === 'yes') {
-  console.log('The answer here should be no.');
-  alert('No, I am younger than 25!');
-  numIncorrect.push('Incorrect');
-} else {
+if(myAge === 'no') {
   console.log('Correct.');
   alert('You are correct! I am 24.');
   numCorrect.push('Correct');
+} else {
+  console.log('The answer here should be no.');
+  alert('No, I am younger than 25!');
+  numIncorrect.push('Incorrect');
 }
 
 var myTravels = prompt('Have I been to Australia?').toLowerCase();
-if(myTravels === 'yes') {
-  console.log(numIncorrect.length);
-  alert ('Unfortunately, no! I would love to go, though!');
-  numIncorrect.push('Incorrect');
-} else{
+if(myTravels === 'no') {
   console.log('Ever since the Lord of the Rings movie, I have wanted to go to Oceania!');
   alert('You are correct! My favorite trip was probably to Copenhagen, but I would love to go to Australia and New Zealand, though!' );
   numCorrect.push('Correct');
+} else{
+  console.log(numIncorrect.length);
+  alert ('Unfortunately, no! I would love to go, though!');
+  numIncorrect.push('Incorrect');
 }
 
 var MyEducation = prompt('Do I have a bachelor\'s degree?').toLowerCase();
@@ -63,19 +63,19 @@ if(doILikeHorses === 'yes') {
 }
 
 var iCantSwim = prompt ('Do you believe me when I say I cannot swim?').toLowerCase();
-if(iCantSwim === 'yes') {
-  console.log('I actually can.');
-  alert('Actually, I\'m just pulling your leg. I can swim!');
-  numIncorrect.push('Incorrect');
-} else {
+if(iCantSwim === 'no') {
   console.log ('You are right not to believe me. On this one, at least!');
   alert('You are right not to believe me. On this one, at least!');
   numCorrect.push('Correct');
+} else {
+  console.log('I actually can.');
+  alert('Actually, I\'m just pulling your leg. I can swim!');
+  numIncorrect.push('Incorrect');
 }
 
 var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
 if(lasagnaServings === 8) {
-  console.log('Wow, good job guessing! I\'m still eating it four days later!');
+  console.log('Wow, good job guessing! I\'m still eating it four days later and have more in my freezer!');
   alert('You\'re good at guessing!');
   numCorrect.push('Correct');
 } else if (lasagnaServings < 8) {
