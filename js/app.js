@@ -1,40 +1,51 @@
 'use strict';
 
+var userName = prompt('What is your name?');
+var numCorrect =[];
+var numIncorrect =[];
 
 var petQuestion = parseInt(prompt('How many pets do you think I have? Please enter a number.'));
 if(petQuestion === 2){
-  console.log('Correct.');
+  console.log('Correct');
   alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
+  numIncorrect.push('correct');
 }else {
   console.log('Keep trying! The user probably cannot see this, but the answer is 2.');
   alert('Keep trying!');
+  numIncorrect.push('Incorrect');
 }
 
 var myAge = prompt('Do you think I am older than 25?').toLowerCase();
 if(myAge === 'yes') {
   console.log('The answer here should be no.');
   alert('No, I am younger than 25!');
+  numIncorrect.push('Incorrect');
 } else {
   console.log('Correct.');
   alert('You are correct! I am 24.');
+  numCorrect.push('Correct');
 }
 
 var myTravels = prompt('Have I been to Australia?').toLowerCase();
 if(myTravels === 'yes') {
-  console.log('Incorrect');
+  console.log(numIncorrect.length);
   alert ('Unfortunately, no! I would love to go, though!');
+  numIncorrect.push('Incorrect');
 } else{
   console.log('Ever since the Lord of the Rings movie, I have wanted to go to Oceania!');
   alert('You are correct! My favorite trip was probably to Copenhagen, but I would love to go to Australia and New Zealand, though!' );
+  numCorrect.push('Correct');
 }
 
 var MyEducation = prompt('Do I have a bachelor\'s degree?').toLowerCase();
 if(MyEducation === 'yes') {
   alert ('Yes. I went to Whitman College where I studied Geology and minored in Anthropology. Can you tell from my cats\' names?');
   console.log('I liked Eastern Washington and would go back on a vacation, but I much prefer living here in Western Washington!');
+  numCorrect.push('Correct');
 } else {
   console.log('Incorrect.');
   alert('I actually do. I went to Whitman College where I studied Geology and minored in Anthropology. Can you tell from my cats\' names?');
+  numIncorrect.push('Incorrect');
 }
 
 var doILikeHorses = prompt('Do I like horses?').toLowerCase();
@@ -66,3 +77,5 @@ if(lasagnaServings === 8) {
   console.log('Okay, not quite that much!');
   alert('Thankfully, not that much! Try a lower number!');
 }
+
+alert ('Good job ' + userName + ' you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.lenth + ' answer(s) wrong ');
