@@ -99,7 +99,9 @@ if(myPets.includes(myPetsQuestion)) {
   alert('Not quite!');
   numIncorrect.push('Incorrect');
 }
+console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + 'wrong.');
 
+//changes prompt to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
 if(numCorrect.length < 2 && numIncorrect.length >= 2) {
   alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong. ');
 } else if(numCorrect.length >=2 && numIncorrect.length < 2) {
