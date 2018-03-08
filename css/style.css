@@ -16,8 +16,8 @@ h2 {
 }
 img {
   height: 200px;
-  padding: 30px;
-} 
+  padding: 10px;
+  } 
 h3 {
   margin: 10px;
   line-height: 1.5;
@@ -26,6 +26,12 @@ h3 {
   background-color: lightblue;
   color: white;
   }
+h4 {
+  margin: 10px;
+  font-size:15px;
+  color:lightblue;
+  margin-bottom:30px;
+}
 
 li {
   font-size:20px;
