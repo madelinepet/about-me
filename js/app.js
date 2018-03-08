@@ -4,22 +4,32 @@
 var numCorrect =[];
 var numIncorrect =[];
 
+
 //get userName so I can use it in the score message
-var userName = prompt('What is your name?');
+// var userName = prompt('What is your name?');
+function firstQuestion() {
+  var userName = prompt('What is your name?');
+  window.userName = userName;
+}
+firstQuestion();
 
 //different answers for different responses. parseInt used to convert answer, which  is string, to  number to be evaluated
 //toLowerCase used so that different cases in the user's answer don't influence the program's response
-var petQuestion = parseInt(prompt('How many pets do you think I have? Please enter a number.'));
-if(petQuestion === 2){
-  alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
-  numIncorrect.push('Correct');
-}else if (petQuestion < 2) {
-  alert('No, I am an amimal lover!');
-  numIncorrect.push('Incorrect');
-} else {
-  alert('I wish!');
-  numIncorrect.push('Incorrect');
+function secondQuestion() {
+  var petQuestion = parseInt(prompt('How many pets do you think I have? Please enter a number.'));
+
+  if(petQuestion === 2){
+    alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
+    numIncorrect.push('Correct');
+  }else if (petQuestion < 2) {
+    alert('No, I am an amimal lover!');
+    numIncorrect.push('Incorrect');
+  } else {
+    alert('I wish!');
+    numIncorrect.push('Incorrect');
+  }
 }
+secondQuestion();
 //When we're allowed to use fns in our labs, I will make most of this long message into one I can call instead of repeating long iterances
 console.log('Question 1: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
@@ -108,9 +118,9 @@ console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numI
 
 //changes prompt to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
 if(numCorrect.length < 2 && numIncorrect.length >= 2) {
-  alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong. ');
+  alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong. ');
 } else if(numCorrect.length >=2 && numIncorrect.length < 2) {
-  alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answer wrong. ');
+  alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answer wrong. ');
 } else {
-  alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong. ');
+  alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong. ');
 }
