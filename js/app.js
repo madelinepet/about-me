@@ -66,7 +66,7 @@ if(doILikeHorses === 'yes') {
 console.log('Question 5: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
 
-var iCantSwim = prompt ('Do you believe me when I say I cannot swim?').toLowerCase();
+var iCantSwim = prompt('Do you believe me when I say I cannot swim?').toLowerCase();
 if(iCantSwim === 'no') {
   alert('You are right not to believe me. On this one, at least!');
   numCorrect.push('Correct');
@@ -90,5 +90,14 @@ if(lasagnaServings === 8) {
 }
 console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
-//concatenation used here based on variables defined at top to report score to user
-alert ('Good job ' + userName + ', you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.length + ' answer(s) wrong. ');
+var myPets=['guinea pig', 'cat', 'dog', 'horse', 'hamster','lizard', 'bunnies'];
+var myPetsQuestion = prompt('What types of animals have I owned?').toLowerCase();
+if(myPets.includes(myPetsQuestion)) {
+  alert('Correct!');
+  numCorrect.push('Correct');
+}else{
+  alert('Not quite!');
+  numIncorrect.push('Incorrect');
+}
+
+alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.length + ' answer(s) wrong. ');
