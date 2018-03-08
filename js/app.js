@@ -100,4 +100,11 @@ if(myPets.includes(myPetsQuestion)) {
   numIncorrect.push('Incorrect');
 }
 
-alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answer(s) correct, and only ' + numIncorrect.length + ' answer(s) wrong. ');
+if(numCorrect.length < 2 && numIncorrect.length >= 2) {
+  alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong. ');
+} else if(numCorrect.length >=2 && numIncorrect.length < 2) {
+  alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answer wrong. ');
+} else {
+  alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong. ');
+}
+
