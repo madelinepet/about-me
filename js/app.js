@@ -90,15 +90,19 @@ if(lasagnaServings === 8) {
 }
 console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 
-var myPets=['guinea pig', 'cat', 'dog', 'horse', 'hamster','lizard', 'bunnies'];
-var myPetsQuestion = prompt('What types of animals have I owned?').toLowerCase();
-if(myPets.includes(myPetsQuestion)) {
-  alert('Correct!');
-  numCorrect.push('Correct');
-}else{
-  alert('Not quite!');
-  numIncorrect.push('Incorrect');
-}
+// var myPets=['guinea pig', 'cat', 'dog', 'horse', 'hamster','lizard', 'bunny'];
+// var myPetsQuestion = prompt('What types of animals have I owned?').toLowerCase();
+// var myPetsResponseIncorrect = false;
+// while(myPetsResponseIncorrect === false) {
+//   if(myPets.includes(myPetsQuestion)) {
+//     alert('Correct!');
+//     numCorrect.push('Correct');
+//     var myPetsResponseIncorrect = true;
+//   }else{
+//     myPetsQuestion = prompt('Not quite! Try again. What types of animals have I owned?');
+//     numIncorrect.push('Incorrect');
+// }
+
 console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + 'wrong.');
 
 //changes prompt to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
@@ -109,4 +113,3 @@ if(numCorrect.length < 2 && numIncorrect.length >= 2) {
 } else {
   alert('Good job ' + userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong. ');
 }
-
