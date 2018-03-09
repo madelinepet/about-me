@@ -14,5 +14,8 @@ VS Code
 Madeline Peters
 madelinepet@hotmail.com
 
+## Contributer (Pair Programming)
+Khalil Ahmed
+
 ## Aknowledgements:
 Thanks to Code Fellows, my instructor Allie, and TA Kat.

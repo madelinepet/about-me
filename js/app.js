@@ -6,12 +6,27 @@ var numIncorrect =[];
 
 
 //get userName so I can use it in the score message
-// var userName = prompt('What is your name?');
 function firstQuestion() {
   var userName = prompt('What is your name?');
   window.userName = userName;
+  alert('Hello, ' + userName + '!');
+  console.log('Hello, ' + userName + '!');
 }
 
+// function firstQuestion() {
+//   var noInput = false;
+//   window.userName = userName;
+//   var userName = prompt('What is your name?');
+//   while (noInput === true){
+//     if (userName.length < 1){
+//       alert('Please enter your name!');
+//     } else {
+//       alert('Hello, ' + userName + '!');
+//       noInput = false;
+//     }
+//   }
+//   console.log('Hello, ' + userName + '!');
+// }
 
 //different answers for different responses. parseInt used to convert answer, which  is string, to  number to be evaluated
 //toLowerCase used so that different cases in the user's answer don't influence the program's response
@@ -28,11 +43,10 @@ function secondQuestion() {
     alert('I wish!');
     numIncorrect.push('Incorrect');
   }
-  console.log('Question 1: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
+  console.log('Question 2: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
 //When we're allowed to use fns in our labs, I will make most of this long message into one I can call instead of repeating long iterances
-
 
 function thirdQuestion() {
   var myTravels = prompt('Have I been to Australia?').toLowerCase();
@@ -46,8 +60,6 @@ function thirdQuestion() {
   console.log('Question 3: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
-
-
 function fourthQuestion() {
   var MyEducation = prompt('Do I have a bachelor\'s degree?').toLowerCase();
   if(MyEducation === 'yes') {
@@ -59,8 +71,6 @@ function fourthQuestion() {
   }
   console.log('Question 4: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
-
-
 
 function fifthQuestion() {
   var doILikeHorses = prompt('Do I like horses?').toLowerCase();
@@ -74,8 +84,6 @@ function fifthQuestion() {
   console.log('Question 5: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
-
-
 function sixthQuestion() {
   var iCantSwim = prompt('Do you believe me when I say I cannot swim?').toLowerCase();
   if(iCantSwim === 'no') {
@@ -88,40 +96,47 @@ function sixthQuestion() {
   console.log('Question 6: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
-
-
 function seventhQuestion() {
   var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
-  if(lasagnaServings === 8) {
-    alert('You\'re good at guessing! I\'m still eating it four days later and have more in my freezer!');
-    numCorrect.push('Correct');
-  } else if (lasagnaServings < 8) {
-    alert('Actually, more!');
-    numIncorrect.push('Incorrect');
-  } else {
-    alert('Okay, not that much!');
-    numIncorrect.push('Incorrect');
+  var counter = 0;
+  var lasagnaQuestionCorrect = false;
+  while(lasagnaQuestionCorrect === false && counter < 3) {
+    if(lasagnaServings === 8) {
+      alert('You\'re good at guessing! I\'m still eating it four days later and have more in my freezer!');
+      numCorrect.push('Correct');
+      lasagnaQuestionCorrect = true;
+      break;
+    } else if (lasagnaServings < 8) {
+      prompt('Actually, more. Keep guessing! How many servings of Lasagna did I make this weekend?');
+      counter ++;
+      numIncorrect.push('Incorrect');
+    } else {
+      prompt('Okay, not that much! Keep guessing! How many servings of Lasagna did I make this weekend?');
+      counter ++;
+      numIncorrect.push('Incorrect');
+    }
+    console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
   }
-  console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
-
-
 function eighthQuestion() {
-  var myPets=['guinea pig', 'cat', 'dog', 'horse', 'hamster','lizard', 'bunny'];
+  var myPets=['guinea pig', 'guinea pigs', 'cat', 'cats', 'dog', 'dogs', 'horse', 'horses', 'hamster', 'hamsters','lizard', 'lizards', 'bunny', 'bunnies'];
+  var counter = 0;
   var myPetsQuestion = prompt('What types of animals have I owned?').toLowerCase();
-  var myPetsResponseIncorrect = false;
-  while(myPetsResponseIncorrect === false) {
+  var myPetsResponseCorrect = false;
+  while(myPetsResponseCorrect === false && counter < 6) {
     if(myPets.includes(myPetsQuestion)) {
       alert('Correct!');
       numCorrect.push('Correct');
-      myPetsResponseIncorrect = true;
+      myPetsResponseCorrect = true;
+      break;
+
     }else{
       myPetsQuestion = prompt('Not quite! Try again. What types of animals have I owned?');
+      counter++;
       numIncorrect.push('Incorrect');
     }
   }
-
-  console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + 'wrong.');
+  console.log('Question 8: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
 function ninthQuestion() {
@@ -133,16 +148,16 @@ function ninthQuestion() {
     alert('No, I am younger than 25!');
     numIncorrect.push('Incorrect');
   }
-  console.log('Question 2: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
+  console.log('Question 9: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 //changes prompt to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
 function scoreAlert(){
   if(numCorrect.length < 2 && numIncorrect.length >= 2) {
-    alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong. ');
+    alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong.');
   } else if(numCorrect.length >=2 && numIncorrect.length < 2) {
-    alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answer wrong. ');
+    alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answer wrong.');
   } else {
-    alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong. ');
+    alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong.');
   }
 }
 firstQuestion();
