@@ -4,29 +4,22 @@
 var numCorrect =[];
 var numIncorrect =[];
 
-
 //get userName so I can use it in the score message
 function firstQuestion() {
+  var noInput = true;
   var userName = prompt('What is your name?');
   window.userName = userName;
-  alert('Hello, ' + userName + '!');
-  console.log('Hello, ' + userName + '!');
+  while(noInput === true){
+    if(userName.length < 1){
+      userName = prompt('Please enter your name!');
+    } else {
+      alert('Hello, ' + userName + '!');
+      console.log('Hello, ' + userName + '!');
+      noInput = false;
+      break;
+    }
+  }
 }
-
-// function firstQuestion() {
-//   var noInput = false;
-//   window.userName = userName;
-//   var userName = prompt('What is your name?');
-//   while (noInput === true){
-//     if (userName.length < 1){
-//       alert('Please enter your name!');
-//     } else {
-//       alert('Hello, ' + userName + '!');
-//       noInput = false;
-//     }
-//   }
-//   console.log('Hello, ' + userName + '!');
-// }
 
 //different answers for different responses. parseInt used to convert answer, which  is string, to  number to be evaluated
 //toLowerCase used so that different cases in the user's answer don't influence the program's response
@@ -37,17 +30,16 @@ function secondQuestion() {
     alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
     numIncorrect.push('Correct');
   }else if (petQuestion < 2) {
-    alert('No, I am an amimal lover!');
+    alert('No, I have two crazy cats!');
     numIncorrect.push('Incorrect');
   } else {
-    alert('I wish!');
+    alert('I wish! I love animals.');
     numIncorrect.push('Incorrect');
   }
   console.log('Question 2: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
 //When we're allowed to use fns in our labs, I will make most of this long message into one I can call instead of repeating long iterances
-
 function thirdQuestion() {
   var myTravels = prompt('Have I been to Australia?').toLowerCase();
   if(myTravels === 'no') {
@@ -118,6 +110,7 @@ function seventhQuestion() {
     console.log('Question 7: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
   }
 }
+
 function eighthQuestion() {
   var myPets=['guinea pig', 'guinea pigs', 'cat', 'cats', 'dog', 'dogs', 'horse', 'horses', 'hamster', 'hamsters','lizard', 'lizards', 'bunny', 'bunnies'];
   var counter = 0;
@@ -160,6 +153,8 @@ function scoreAlert(){
     alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answers correct, and only ' + numIncorrect.length + ' answers wrong.');
   }
 }
+
+//call all my new functions
 firstQuestion();
 secondQuestion();
 thirdQuestion();
