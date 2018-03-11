@@ -5,7 +5,7 @@ var numCorrect =[];
 var numIncorrect =[];
 
 //get userName so I can use it in the score message
-function firstQuestion() {
+function nameQuestion() {
   var noInput = true;
   var userName = prompt('What is your name?');
   //I now know that using window. can mess up my code and that it's generally a bad idea, but we haven't learned that in class and it works in this instance.
@@ -22,33 +22,51 @@ function firstQuestion() {
     }
   }
 }
+function firstQuestion() {
+  var myAge = prompt('Do you think I am older than 25? Please answer "yes" or "no" unless otherwise specified.').toLowerCase();
+  if(myAge === 'no') {
+    alert('You are correct! I am 24.');
+    numCorrect.push('Correct');
+  } else if (myAge === 'yes'){
+    alert('No, I am 24!');
+    numIncorrect.push('Incorrect');
+  } else {
+    alert('I am not sure what you typed as you did not follow my instructions of answering with either "yes" or "no," so I am counting this as incorrect. I am 24!');
+    numIncorrect.push('Incorrect');
+  }
+  console.log('Question 9: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
+}
 
 //different answers for different responses. parseInt used to convert answer, which  is string, to a number so it can be evaluated.
 //toLowerCase used so that different cases in the user's answer don't influence the program's response.
 function secondQuestion() {
   var petQuestion = parseInt(prompt('How many pets do you think I have? Please enter a number.'));
-
   if(petQuestion === 2){
-    alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian! ');
+    alert('Correct! I have two kittens named Ruby and Sid, short for Obsidian!');
     numIncorrect.push('Correct');
   }else if (petQuestion < 2) {
-    alert('No, I have two crazy cats!');
+    alert('No, I have two crazy kittens named Ruby and Sid, short for Obsidian!');
+    numIncorrect.push('Incorrect');
+  } else if (petQuestion > 2){
+    alert('I wish! I love animals. I have two kittens named Ruby and Sid, short for Obsidian!');
     numIncorrect.push('Incorrect');
   } else {
-    alert('I wish! I love animals.');
+    alert('I am not sure what you typed, but I\'m counting it as incorrect as you did not follow my instructions to answer with a number. I have two kittens named Ruby and Sid, short for Obsidian!');
     numIncorrect.push('Incorrect');
   }
   console.log('Question 2: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
-//When we're allowed to use fns in our labs, I will make most of this long message into one I can call instead of repeating long iterances
 function thirdQuestion() {
   var myTravels = prompt('Have I been to Australia?').toLowerCase();
   if(myTravels === 'no') {
     alert('You are correct! Ever since the Lord of the Rings movies, I have wanted to go to Oceania! My favorite trip was probably to Copenhagen, but Australia and New Zealand are high on the list!' );
     numCorrect.push('Correct');
-  } else{
+  }else if(myTravels === 'yes'){
     alert ('Unfortunately, I have not! Ever since the Lord of the Rings movies, I have wanted to go to Oceania! My favorite trip was probably to Copenhagen, but Australia and New Zealand are high on the list!');
+    numIncorrect.push('Incorrect');
+  } else{
+    alert ('I am not sure what you typed, but I\'m counting it as incorrect as you did not follow my instructions to answer with "yes" or "no." Unfortunately, I have not been to Australia! Ever since the Lord of the Rings movies, I have wanted to go to Oceania! My favorite trip was probably to Copenhagen, but Australia and New Zealand are high on the list!');
     numIncorrect.push('Incorrect');
   }
   console.log('Question 3: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
@@ -59,8 +77,11 @@ function fourthQuestion() {
   if(MyEducation === 'yes') {
     alert ('Yes. I went to Whitman College where I studied Geology and minored in Anthropology. Can you tell from my cats\' names?');
     numCorrect.push('Correct');
-  } else {
+  }else if(MyEducation === 'no') {
     alert('I actually do. I went to Whitman College where I studied Geology and minored in Anthropology. Can you tell from my cats\' names?');
+    numIncorrect.push('Incorrect');
+  }else{
+    alert('I don\'t understand what you typed, but I\'m counting it as incorrect as you did not follow my instructions of answering with "yes" or "no." I went to Whitman College where I studied Geology and minored in Anthropology. Can you tell from my cats\' names?');
     numIncorrect.push('Incorrect');
   }
   console.log('Question 4: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
@@ -71,8 +92,11 @@ function fifthQuestion() {
   if(doILikeHorses === 'yes') {
     alert ('Yes. Growing up, I rode horses and enjoyed jumping. Taking care of horses is a lot of work!');
     numCorrect.push('Correct');
-  } else {
+  } else if (doILikeHorses === 'no'){
     alert ('I actually do like them. I particularly enjoyed jumping while I was growing up.');
+    numIncorrect.push('Incorrect');
+  }else {
+    alert ('I am not sure what you typed as you did not follow my instructions to answer with "yes" or "no," so I am counting this as incorrect. I do like horses. I particularly enjoyed jumping while I was growing up.');
     numIncorrect.push('Incorrect');
   }
   console.log('Question 5: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
@@ -83,8 +107,11 @@ function sixthQuestion() {
   if(iCantSwim === 'no') {
     alert('You are right not to believe me. On this one, at least!');
     numCorrect.push('Correct');
-  } else {
+  } else if (iCantSwim === 'yes'){
     alert('Actually, I\'m just pulling your leg. I can swim!');
+    numIncorrect.push('Incorrect');
+  } else {
+    alert('I am not sure what you typed as you did not follow my instructions to answer with "yes" or "no," so I am counting this as incorrect. I can swim!');
     numIncorrect.push('Incorrect');
   }
   console.log('Question 6: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
@@ -92,7 +119,7 @@ function sixthQuestion() {
 
 //This function limits the number of tries the user has to get the correct answer
 function seventhQuestion() {
-  var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
+  var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend? You have three guesses, but every incorrect answer will be held against you.'));
   var counter = 0;
   var lasagnaQuestionCorrect = false;
   while(lasagnaQuestionCorrect === false && counter < 3) {
@@ -137,17 +164,6 @@ function eighthQuestion() {
   console.log('Question 8: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
-function ninthQuestion() {
-  var myAge = prompt('Do you think I am older than 25?').toLowerCase();
-  if(myAge === 'no') {
-    alert('You are correct! I am 24.');
-    numCorrect.push('Correct');
-  } else {
-    alert('No, I am younger than 25!');
-    numIncorrect.push('Incorrect');
-  }
-  console.log('Question 9: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
-}
 //changes alert to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
 function scoreAlert(){
   if(numCorrect.length < 2 && numIncorrect.length >= 2) {
@@ -160,6 +176,7 @@ function scoreAlert(){
 }
 
 //call all my new functions
+nameQuestion();
 firstQuestion();
 secondQuestion();
 thirdQuestion();
@@ -168,5 +185,4 @@ fifthQuestion();
 sixthQuestion();
 seventhQuestion();
 eighthQuestion();
-ninthQuestion();
 scoreAlert();
