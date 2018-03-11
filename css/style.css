@@ -1,5 +1,7 @@
 h1{
   background-color: lightblue; 
+  width: 600px;
+  text-align: center;
   color: white;
   font-size: 50px;
   font-weight: bold; 
@@ -8,6 +10,7 @@ h1{
 }
 h2 {
   margin:10px;
+  width: 600px;
   color: green;
   font-size: 30px;
   font-style: italic;
@@ -15,22 +18,36 @@ h2 {
   border: 1px solid lightblue;
 }
 img {
+  display: block;
+  margin-left: 210px;
+  margin-right: 210px;
   height: 200px;
-  padding: 10px;
+  padding: 1px;
+  border: 1px dashed green;
   } 
+
 h3 {
   margin: 10px;
   line-height: 1.5;
+  width: 600px;
+  text-align: center;
   font-size: 30px;
   font-weight: bold;
   background-color: lightblue;
   color: white;
   }
+
 h4 {
   margin: 10px;
-  font-size:15px;
+  font-size: 15px;
+  width: 600px;
+  text-align: center;
   color:lightblue;
-  margin-bottom:30px;
+  margin-bottom: 30px;
+}
+h4:hover{
+  background-color: palevioletred; 
+  width: 600px;
 }
 
 li {
@@ -41,11 +58,15 @@ li {
 }
  
 ol {
+  width: 640px;
+  text-align: center;
   list-style-type: decimal;
   margin-bottom: 50px;
 } 
 
 ul {
+  width: 640px;
+  text-align: center;
   list-style-type: disc;
   }
 
