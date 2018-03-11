@@ -8,9 +8,11 @@ var numIncorrect =[];
 function firstQuestion() {
   var noInput = true;
   var userName = prompt('What is your name?');
+  //I now know that using window. can mess up my code and that it's generally a bad idea, but we haven't learned that in class and it works in this instance.
   window.userName = userName;
   while(noInput === true){
     if(userName.length < 1){
+      //have to redefine userName or the promp will get stuck even if the user inputs something the next time it asks.
       userName = prompt('Please enter your name!');
     } else {
       alert('Hello, ' + userName + '!');
@@ -21,8 +23,8 @@ function firstQuestion() {
   }
 }
 
-//different answers for different responses. parseInt used to convert answer, which  is string, to  number to be evaluated
-//toLowerCase used so that different cases in the user's answer don't influence the program's response
+//different answers for different responses. parseInt used to convert answer, which  is string, to a number so it can be evaluated.
+//toLowerCase used so that different cases in the user's answer don't influence the program's response.
 function secondQuestion() {
   var petQuestion = parseInt(prompt('How many pets do you think I have? Please enter a number.'));
 
@@ -88,6 +90,7 @@ function sixthQuestion() {
   console.log('Question 6: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
 
+//This function limits the number of tries the user has to get the correct answer
 function seventhQuestion() {
   var lasagnaServings = parseInt(prompt('How many servings of Lasagna did I make this weekend?'));
   var counter = 0;
@@ -99,11 +102,12 @@ function seventhQuestion() {
       lasagnaQuestionCorrect = true;
       break;
     } else if (lasagnaServings < 8) {
-      prompt('Actually, more. Keep guessing! How many servings of Lasagna did I make this weekend?');
+      //you need the parseInt each time you reassign the variable to the prompt, which you need to do for the loop to work. If not, the function will never be able to evaluate if lasagnaServings === 8.
+      lasagnaServings = parseInt(prompt('Actually, more. Keep guessing! How many servings of Lasagna did I make this weekend?'));
       counter ++;
       numIncorrect.push('Incorrect');
     } else {
-      prompt('Okay, not that much! Keep guessing! How many servings of Lasagna did I make this weekend?');
+      lasagnaServings = parseInt(prompt('Okay, not that much! Keep guessing! How many servings of Lasagna did I make this weekend?'));
       counter ++;
       numIncorrect.push('Incorrect');
     }
@@ -111,10 +115,11 @@ function seventhQuestion() {
   }
 }
 
+//this question limits the number of tries the user has to guess items in an array, myPets
 function eighthQuestion() {
   var myPets=['guinea pig', 'guinea pigs', 'cat', 'cats', 'dog', 'dogs', 'horse', 'horses', 'hamster', 'hamsters','lizard', 'lizards', 'bunny', 'bunnies'];
   var counter = 0;
-  var myPetsQuestion = prompt('What types of animals have I owned?').toLowerCase();
+  var myPetsQuestion = prompt('Can you guess a type of animal I have owned?').toLowerCase();
   var myPetsResponseCorrect = false;
   while(myPetsResponseCorrect === false && counter < 6) {
     if(myPets.includes(myPetsQuestion)) {
@@ -143,7 +148,7 @@ function ninthQuestion() {
   }
   console.log('Question 9: you have ' + numCorrect.length + ' correct and ' + numIncorrect.length + ' wrong.');
 }
-//changes prompt to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
+//changes alert to make sense for all three possible combinations of sinular and plural answer and answers in the prompt
 function scoreAlert(){
   if(numCorrect.length < 2 && numIncorrect.length >= 2) {
     alert('Good job ' + window.userName + ', you got ' + numCorrect.length + ' answer correct, and only ' + numIncorrect.length + ' answers wrong.');
